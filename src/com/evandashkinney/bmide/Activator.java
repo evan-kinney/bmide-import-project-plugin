@@ -1,4 +1,4 @@
-package com.seeq.eclipse;
+package com.evandashkinney.bmide;
 
 import org.eclipse.core.runtime.Plugin;
 import org.osgi.framework.*;
@@ -6,7 +6,7 @@ import org.osgi.framework.*;
 public class Activator extends Plugin {
 	
     // The plug-in ID
-    public static final String PLUGIN_ID = "com.seeq.eclipse.importprojects"; //$NON-NLS-1$
+    public static final String PLUGIN_ID = "com.evandashkinney.bmide.importproject"; //$NON-NLS-1$
 
     // The shared instance
     private static Activator plugin;
