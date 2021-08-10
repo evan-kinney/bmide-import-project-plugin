@@ -1,4 +1,4 @@
-package com.evandashkinney.bmide;
+package com.seeq.eclipse;
 
 import java.io.*;
 import java.util.*;

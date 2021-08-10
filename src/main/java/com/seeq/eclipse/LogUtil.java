@@ -1,4 +1,4 @@
-package com.evandashkinney.bmide;
+package com.seeq.eclipse;
 
 import org.eclipse.core.runtime.ILog;
 import org.eclipse.core.runtime.IStatus;
