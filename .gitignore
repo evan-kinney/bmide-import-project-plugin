@@ -1,5 +1,5 @@
 /.settings
 /target
-/META-INF
-/.classpath
-/.project
+/output
+output/generated/classes/com/seeq/eclipse/Activator.class
+Launch Configurations/BMIDE Import Project Plugin.launch

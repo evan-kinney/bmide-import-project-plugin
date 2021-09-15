@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><?pde version="3.8"?><target name="Business Modeler IDE (BMIDE)">
+	<locations>
+		<location path="${TC_ROOT}\bmide\client" type="Directory"/>
+	</locations>
+	<targetJRE path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+</target>

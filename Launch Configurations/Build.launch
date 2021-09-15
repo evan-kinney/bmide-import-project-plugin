@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.ant.AntLaunchConfigurationType">
+    <booleanAttribute key="org.eclipse.ant.ui.DEFAULT_VM_INSTALL" value="false"/>
+    <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+        <listEntry value="/bmide-import-project-plugin/build.xml"/>
+    </listAttribute>
+    <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+        <listEntry value="1"/>
+    </listAttribute>
+    <listAttribute key="org.eclipse.debug.ui.favoriteGroups">
+        <listEntry value="org.eclipse.ui.externaltools.launchGroup"/>
+    </listAttribute>
+    <booleanAttribute key="org.eclipse.jdt.launching.ATTR_USE_CLASSPATH_ONLY_JAR" value="false"/>
+    <stringAttribute key="org.eclipse.jdt.launching.CLASSPATH_PROVIDER" value="org.eclipse.ant.ui.AntClasspathProvider"/>
+    <stringAttribute key="org.eclipse.jdt.launching.JRE_CONTAINER" value="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+    <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="org.eclipse.ant.internal.launching.remote.InternalAntRunner"/>
+    <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="bmide-import-project-plugin"/>
+    <stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.ant.ui.AntClasspathProvider"/>
+    <mapAttribute key="org.eclipse.ui.externaltools.ATTR_ANT_PROPERTIES">
+        <mapEntry key="basearch" value="x86_64"/>
+        <mapEntry key="basenl" value="en_US"/>
+        <mapEntry key="baseos" value="win32"/>
+        <mapEntry key="basews" value="win32"/>
+        <mapEntry key="bootclasspath" value="C:\software\java\jdk-11.0.5\lib\jrt-fs.jar"/>
+        <mapEntry key="eclipse.running" value="true"/>
+        <mapEntry key="javacDebugInfo" value="on"/>
+        <mapEntry key="javacFailOnError" value="false"/>
+        <mapEntry key="javacSource" value="1.8"/>
+        <mapEntry key="javacTarget" value="1.8"/>
+        <mapEntry key="javacVerbose" value="false"/>
+    </mapAttribute>
+    <stringAttribute key="org.eclipse.ui.externaltools.ATTR_LOCATION" value="${workspace_loc:/bmide-import-project-plugin/build.xml}"/>
+    <stringAttribute key="process_factory_id" value="org.eclipse.ant.ui.remoteAntProcessFactory"/>
+</launchConfiguration>
