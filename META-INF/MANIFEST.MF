@@ -11,6 +11,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.core.resources,
  com.teamcenter.bmide.server.ui,
  com.teamcenter.bmide.install,
- com.teamcenter.bmide.foundation.core
+ com.teamcenter.bmide.foundation.core,
+ com.teamcenter.bmide.base.core
 Bundle-ActivationPolicy: lazy
 Export-Package: com.seeq.eclipse

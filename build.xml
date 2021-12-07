@@ -49,6 +49,7 @@
 			<pathelement path="${env.TC_ROOT}/bmide/client/plugins/com.teamcenter.bmide.server.ui_12000.3.0.jar" />
 			<pathelement path="${env.TC_ROOT}/bmide/client/plugins/com.teamcenter.bmide.install_12000.3.0.jar" />
 			<pathelement path="${env.TC_ROOT}/bmide/client/plugins/com.teamcenter.bmide.foundation.core_12000.3.0.jar" />
+			<pathelement path="${env.TC_ROOT}/bmide/client/plugins/com.teamcenter.bmide.base.core_12000.3.0.jar" />
 		</path>
 		<echo message="Dependencies resolved." />
 	</target>
