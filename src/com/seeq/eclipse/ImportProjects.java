@@ -113,10 +113,14 @@ public class ImportProjects implements org.eclipse.ui.IStartup {
 
 		for (String importPath : importPaths) {
 			LogUtil.info(String.format("Searching for projects in %s", importPath));
+			System.out.println(String.format("Searching for projects in %s", importPath));
 			List<File> projectFiles = this.findFilesRecursively(importPath, "\\" + BaseCoreUtil.PROJECT_FILE,
 					new ArrayList<File>());
 
 			for (File projectFile : projectFiles) {
+				
+				System.out.println(String.format("Found project at %s", projectFile.toString()));
+				
 				try {
 					IWorkspace workspace = ResourcesPlugin.getWorkspace();
 					IProjectDescription description = workspace
@@ -125,25 +129,23 @@ public class ImportProjects implements org.eclipse.ui.IStartup {
 					if (!project.isOpen() && !project.exists()) {
 						LogUtil.info(String.format("Importing project %s %s", description.getName(),
 								description.getLocationURI()));
+						System.out.println(String.format("Importing project %s %s", description.getName(),
+								description.getLocationURI()));
 						project.create(description, null);
 						project.open(null);
 
-						try {
-							TemplateDependencyReader templateDependencyReader = new TemplateDependencyReader();
-							Document dependencyXMLDocument = templateDependencyReader.readXmlFile(project
-									.getFolder(ServerCoreConstants.EXTN_FOLDER_NAME)
-									.getFile(ServerCoreConstants.DEPENDENCY_FILE_NAME).getLocation().toOSString());
-							TemplateDependency templateDependency = (TemplateDependency) templateDependencyReader
-									.buildObject(dependencyXMLDocument);
-							project.setPersistentProperty(new QualifiedName("", ServerUIConstants.SOLUTION_NAME_KEY),
-									templateDependency.getName());
-							List<String> prefixes = templateDependency.getPrefixes();
-							if (prefixes != null && prefixes.size() > 0) {
-								project.setPersistentProperty(
-										new QualifiedName("", TemplateDependencyConstants.PREFIXES), prefixes.get(0));
-							}
-						} catch (Exception e) {
-							e.printStackTrace();
+						TemplateDependencyReader templateDependencyReader = new TemplateDependencyReader();
+						Document dependencyXMLDocument = templateDependencyReader
+								.readXmlFile(project.getFolder(ServerCoreConstants.EXTN_FOLDER_NAME)
+										.getFile(ServerCoreConstants.DEPENDENCY_FILE_NAME).getLocation().toOSString());
+						TemplateDependency templateDependency = (TemplateDependency) templateDependencyReader
+								.buildObject(dependencyXMLDocument);
+						project.setPersistentProperty(new QualifiedName("", ServerUIConstants.SOLUTION_NAME_KEY),
+								templateDependency.getName());
+						List<String> prefixes = templateDependency.getPrefixes();
+						if (prefixes != null && prefixes.size() > 0) {
+							project.setPersistentProperty(new QualifiedName("", TemplateDependencyConstants.PREFIXES),
+									prefixes.get(0));
 						}
 
 						project.setPersistentProperty(
@@ -152,8 +154,10 @@ public class ImportProjects implements org.eclipse.ui.IStartup {
 							project.close(null);
 						}
 					}
-				} catch (CoreException e) {
+				} catch (Exception e) {
 					LogUtil.error(e);
+					System.err.println(e);
+					e.printStackTrace();
 				}
 			}
 		}
