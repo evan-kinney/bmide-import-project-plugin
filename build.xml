@@ -4,37 +4,56 @@
 	<!-- Properties -->
 	<!-- Environment Properties -->
 	<property environment="env" />
-	<property name="bmide.dir" value="${env.TC_ROOT}/bmide" />
-	<property name="bmide.client.dir" value="${bmide.dir}/client" />
-	<property name="bmide.client.plugins.dir" value="${bmide.client.dir}/plugins" />
+	<property name="tc_bin.dir" value="${env.TC_ROOT}/bin" />
+	<property name="tc_bin.bmide.dir" value="${tc_bin.dir}/bmide" />
 	<!-- Project Properties -->
 	<property name="src.dir" value="${basedir}/src" />
 	<property name="out.dir" value="${basedir}/output" />
 	<property name="out.generated.dir" value="${out.dir}/generated" />
+	<property name="out.generated.dependencies.dir" value="${out.generated.dir}/dependencies" />
 	<property name="out.generated.classes.dir" value="${out.generated.dir}/classes" />
 	<property name="out.generated.docs.dir" value="${out.generated.dir}/docs" />
 	<property name="out.packaging.dir" value="${out.dir}/wntx64/packaging" />
-	<property name="out.packaging.bmide.client.plugins.dir" value="${out.packaging.dir}/tc/bmide/client/plugins" />
-	<property name="deploy.dir" value="${bmide.client.plugins.dir}" />
+	<property name="out.packaging.tc.bin.bmide.dir" value="${out.packaging.dir}/tc/bin/bmide" />
+	<property name="deploy.dir" value="${tc_bin.bmide.dir}" />
 	<property name="target.jar" value="com.evandashkinney.bmide.importproject_13000.3.0.jar" />
 
 	<!-- Targets -->
+	<!-- setup: Sets up dependencies -->
+	<target name="setup" depends="" description="">
+		<copy todir="${out.generated.dependencies.dir}" includeemptydirs="false">
+			<fileset dir="${env.TC_ROOT}/bmide/client/plugins">
+				<include name="org.eclipse.core.jobs_3.10.200.v20180912-1356.jar" />
+				<include name="org.eclipse.core.runtime_3.15.100.v20181107-1343.jar" />
+				<include name="org.eclipse.core.resources_3.13.200.v20181121-1020.jar" />
+				<include name="org.eclipse.equinox.app_1.4.0.v20181009-1752.jar" />
+				<include name="org.eclipse.equinox.common_3.10.200.v20181021-1645.jar" />
+				<include name="org.eclipse.osgi_3.13.200.v20181130-2106.jar" />
+				<include name="org.eclipse.ui_3.111.0.v20181117-0847.jar" />
+				<include name="org.eclipse.ui.workbench_3.112.100.v20181127-1518.jar" />
+				<include name="com.teamcenter.bmide.server.ui_13000.3.0.jar" />
+				<include name="com.teamcenter.bmide.install_13000.3.0.jar" />
+				<include name="com.teamcenter.bmide.foundation.core_13000.3.0.jar" />
+				<include name="com.teamcenter.bmide.base.core_13000.3.0.jar" />
+			</fileset>
+		</copy>
+	</target>
 	<!-- resolve: Resolves dependencies -->
-	<target name="resolve" depends="" description="Resolves dependencies">
+	<target name="resolve" depends="setup" description="Resolves dependencies">
 		<echo message="Resolving dependencies..." />
 		<path id="local.classpath">
-			<pathelement path="${env.TC_ROOT}/bmide/client/plugins/org.eclipse.core.jobs_3.10.200.v20180912-1356.jar" />
-			<pathelement path="${env.TC_ROOT}/bmide/client/plugins/org.eclipse.core.runtime_3.15.100.v20181107-1343.jar" />
-			<pathelement path="${env.TC_ROOT}/bmide/client/plugins/org.eclipse.core.resources_3.13.200.v20181121-1020.jar" />
-			<pathelement path="${env.TC_ROOT}/bmide/client/plugins/org.eclipse.equinox.app_1.4.0.v20181009-1752.jar" />
-			<pathelement path="${env.TC_ROOT}/bmide/client/plugins/org.eclipse.equinox.common_3.10.200.v20181021-1645.jar" />
-			<pathelement path="${env.TC_ROOT}/bmide/client/plugins/org.eclipse.osgi_3.13.200.v20181130-2106.jar" />
-			<pathelement path="${env.TC_ROOT}/bmide/client/plugins/org.eclipse.ui_3.111.0.v20181117-0847.jar" />
-			<pathelement path="${env.TC_ROOT}/bmide/client/plugins/org.eclipse.ui.workbench_3.112.100.v20181127-1518.jar" />
-			<pathelement path="${env.TC_ROOT}/bmide/client/plugins/com.teamcenter.bmide.server.ui_13000.3.0.jar" />
-			<pathelement path="${env.TC_ROOT}/bmide/client/plugins/com.teamcenter.bmide.install_13000.3.0.jar" />
-			<pathelement path="${env.TC_ROOT}/bmide/client/plugins/com.teamcenter.bmide.foundation.core_13000.3.0.jar" />
-			<pathelement path="${env.TC_ROOT}/bmide/client/plugins/com.teamcenter.bmide.base.core_13000.3.0.jar" />
+			<pathelement path="${out.generated.dependencies.dir}/org.eclipse.core.jobs_3.10.200.v20180912-1356.jar" />
+			<pathelement path="${out.generated.dependencies.dir}/org.eclipse.core.runtime_3.15.100.v20181107-1343.jar" />
+			<pathelement path="${out.generated.dependencies.dir}/org.eclipse.core.resources_3.13.200.v20181121-1020.jar" />
+			<pathelement path="${out.generated.dependencies.dir}/org.eclipse.equinox.app_1.4.0.v20181009-1752.jar" />
+			<pathelement path="${out.generated.dependencies.dir}/org.eclipse.equinox.common_3.10.200.v20181021-1645.jar" />
+			<pathelement path="${out.generated.dependencies.dir}/org.eclipse.osgi_3.13.200.v20181130-2106.jar" />
+			<pathelement path="${out.generated.dependencies.dir}/org.eclipse.ui_3.111.0.v20181117-0847.jar" />
+			<pathelement path="${out.generated.dependencies.dir}/org.eclipse.ui.workbench_3.112.100.v20181127-1518.jar" />
+			<pathelement path="${out.generated.dependencies.dir}/com.teamcenter.bmide.server.ui_13000.3.0.jar" />
+			<pathelement path="${out.generated.dependencies.dir}/com.teamcenter.bmide.install_13000.3.0.jar" />
+			<pathelement path="${out.generated.dependencies.dir}/com.teamcenter.bmide.foundation.core_13000.3.0.jar" />
+			<pathelement path="${out.generated.dependencies.dir}/com.teamcenter.bmide.base.core_13000.3.0.jar" />
 		</path>
 		<echo message="Dependencies resolved." />
 	</target>
@@ -61,7 +80,7 @@
 		<echo message="Files necessary to compile project copied." />
 	</target>
 	<!-- compile: Compile project -->
-	<target name="compile" depends="resolve, copy" description="Compile project">
+	<target name="compile" depends="copy, resolve" description="Compile project">
 		<echo message="Compiling project..." />
 		<javac srcdir="${src.dir}" destdir="${out.generated.classes.dir}" debug="off" includeAntRuntime="no" nowarn="on" optimize="on">
 			<classpath>
@@ -73,15 +92,23 @@
 	<!-- build: Build the project -->
 	<target name="build" depends="compile" description="Build the project">
 		<echo message="Building project..." />
-		<mkdir dir="${out.packaging.bmide.client.plugins.dir}" />
-		<jar basedir="${out.generated.classes.dir}" destfile="${out.packaging.bmide.client.plugins.dir}/${target.jar}" manifest="${basedir}/META-INF/MANIFEST.MF" />
+		<mkdir dir="${out.packaging.tc.bin.bmide.dir}" />
+		<jar basedir="${out.generated.classes.dir}" destfile="${out.packaging.tc.bin.bmide.dir}/${target.jar}" manifest="${basedir}/META-INF/MANIFEST.MF" />
 		<echo message="Project built." />
 	</target>
+	<!-- package: Packages the project -->
+	<target name="package" depends="build" description="Packages the project">
+		<copy todir="${out.packaging.tc.bin.bmide.dir}" includeemptydirs="false">
+			<fileset dir="${out.generated.dependencies.dir}">
+				<include name="**/*.jar" />
+			</fileset>
+		</copy>
+	</target>
 	<!-- deploy: Deploys the project -->
-	<target name="deploy" depends="build" description="Deploys the project">
+	<target name="deploy" depends="package" description="Deploys the project">
 		<echo message="Deploying project..." />
 		<copy includeemptydirs="false" todir="${deploy.dir}">
-			<fileset dir="${out.packaging.bmide.client.plugins.dir}">
+			<fileset dir="${out.packaging.tc.bin.bmide.dir}">
 				<include name="**/*.jar" />
 			</fileset>
 		</copy>
