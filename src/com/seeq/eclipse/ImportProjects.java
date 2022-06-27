@@ -9,10 +9,10 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IProjectDescription;
 import org.eclipse.core.resources.IWorkspace;
 import org.eclipse.core.resources.ResourcesPlugin;
-import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.QualifiedName;
 import org.eclipse.equinox.app.IApplicationContext;
+import org.eclipse.ui.IStartup;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceReference;
 import org.w3c.dom.Document;
@@ -24,7 +24,7 @@ import com.teamcenter.bmide.install.dependency.TemplateDependencyConstants;
 import com.teamcenter.bmide.install.dependency.TemplateDependencyReader;
 import com.teamcenter.bmide.server.ui.ServerUIConstants;
 
-public class ImportProjects implements org.eclipse.ui.IStartup {
+public class ImportProjects implements IStartup {
 
 	private static final String ARG_IMPORT = "-import";
 	private static final String ARG_TEMPLATES = "-templates";
