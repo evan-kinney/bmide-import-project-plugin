@@ -28,6 +28,7 @@
 				<include name="org.eclipse.core.resources_3.13.200.v20181121-1020.jar" />
 				<include name="org.eclipse.equinox.app_1.4.0.v20181009-1752.jar" />
 				<include name="org.eclipse.equinox.common_3.10.200.v20181021-1645.jar" />
+				<include name="org.eclipse.equinox.launcher_1.5.200.v20180922-1751.jar" />
 				<include name="org.eclipse.osgi_3.13.200.v20181130-2106.jar" />
 				<include name="org.eclipse.ui_3.111.0.v20181117-0847.jar" />
 				<include name="org.eclipse.ui.workbench_3.112.100.v20181127-1518.jar" />
@@ -35,6 +36,7 @@
 				<include name="com.teamcenter.bmide.install_13000.3.0.jar" />
 				<include name="com.teamcenter.bmide.foundation.core_13000.3.0.jar" />
 				<include name="com.teamcenter.bmide.base.core_13000.3.0.jar" />
+				<include name="com.teamcenter.bmide.base.ui_13000.3.0.jar" />
 			</fileset>
 		</copy>
 	</target>
@@ -47,6 +49,7 @@
 			<pathelement path="${out.generated.dependencies.dir}/org.eclipse.core.resources_3.13.200.v20181121-1020.jar" />
 			<pathelement path="${out.generated.dependencies.dir}/org.eclipse.equinox.app_1.4.0.v20181009-1752.jar" />
 			<pathelement path="${out.generated.dependencies.dir}/org.eclipse.equinox.common_3.10.200.v20181021-1645.jar" />
+			<pathelement path="${out.generated.dependencies.dir}/org.eclipse.equinox.launcher_1.5.200.v20180922-1751.jar" />
 			<pathelement path="${out.generated.dependencies.dir}/org.eclipse.osgi_3.13.200.v20181130-2106.jar" />
 			<pathelement path="${out.generated.dependencies.dir}/org.eclipse.ui_3.111.0.v20181117-0847.jar" />
 			<pathelement path="${out.generated.dependencies.dir}/org.eclipse.ui.workbench_3.112.100.v20181127-1518.jar" />
@@ -54,6 +57,7 @@
 			<pathelement path="${out.generated.dependencies.dir}/com.teamcenter.bmide.install_13000.3.0.jar" />
 			<pathelement path="${out.generated.dependencies.dir}/com.teamcenter.bmide.foundation.core_13000.3.0.jar" />
 			<pathelement path="${out.generated.dependencies.dir}/com.teamcenter.bmide.base.core_13000.3.0.jar" />
+			<pathelement path="${out.generated.dependencies.dir}/com.teamcenter.bmide.base.ui_13000.3.0.jar" />
 		</path>
 		<echo message="Dependencies resolved." />
 	</target>
